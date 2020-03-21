@@ -31,21 +31,25 @@ onChange(e)
 
 render() {
 	return (
-		
-		<div>
+		<React.Fragment>
+			<div className="row">
+		<div className="col-sm-4"></div>
+		<div className="col-sm-4">
 			<form onSubmit={this.onSubmit}>
-			Enter Name :
-			<input type="text" name="name" value={this.state.name} onChange={this.onChange}/>
-			<button type="submit">Submit</button>
+			Enter Handle :
+			<input type="text" name="name" className="form-control form-control" value={this.state.name} onChange={this.onChange} /><br/>
+			<button type="submit" className="btn btn-light">Submit</button>
 			<br/>
 			{ this.props.userexists &&
 			<div>
 			Name : { this.props.name }	<br/>	
-			Rank : {this.props.info.rank } <br/>
-			</div>
+			Rank : {this.props.info.rank } <br/></div>
 			}
 			</form>
 		</div>
+		<div className="col-sm-4"></div>
+		</div>
+		</React.Fragment>
 		)
 	}
 }

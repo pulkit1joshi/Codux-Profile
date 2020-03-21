@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9687c31d9158e6b23a2a5dbe5424956d",
+    "revision": "5531541a9682a7e83819c7867f6709bf",
     "url": "/Codux-Profile/index.html"
   },
   {
-    "revision": "3dc93f4607bdd84f6c0c",
+    "revision": "5b3cfddab81142a73979",
     "url": "/Codux-Profile/static/css/main.c9b7e7ef.chunk.css"
   },
   {
-    "revision": "12c7f9a5d4bd5bb7b4bc",
-    "url": "/Codux-Profile/static/js/2.b1ec76ab.chunk.js"
+    "revision": "8f905b1e1ffab2925950",
+    "url": "/Codux-Profile/static/js/2.3eb94539.chunk.js"
   },
   {
     "revision": "4ba1a1c11c57ed15aa68008707a3d6b4",
-    "url": "/Codux-Profile/static/js/2.b1ec76ab.chunk.js.LICENSE.txt"
+    "url": "/Codux-Profile/static/js/2.3eb94539.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3dc93f4607bdd84f6c0c",
-    "url": "/Codux-Profile/static/js/main.202abca0.chunk.js"
+    "revision": "5b3cfddab81142a73979",
+    "url": "/Codux-Profile/static/js/main.68b3e95e.chunk.js"
   },
   {
     "revision": "4d1339d8e498d26d82f6",

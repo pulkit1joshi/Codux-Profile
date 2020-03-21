@@ -1,7 +1,7 @@
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_RATINGHIST } from './types';
 
 export const fetchUser = string => dispatch => {
-    console.log("Actionfetched");
+    console.log("User fetched");
     fetch(string)
       .then(res => res.json())
       .then(userData =>
@@ -19,3 +19,15 @@ export const fetchUser = string => dispatch => {
           })
     });
   };
+
+export const fetchRatingHist = string => dispatch => {
+    console.log('Rating History Fetched');
+    fetch(string)
+      .then(res => res.json())
+      .then(ratingData =>
+        dispatch({
+          type: FETCH_RATINGHIST,
+          payload: ratingData,
+        })
+      );
+}

@@ -1,9 +1,10 @@
-import { FETCH_USER } from '../actions/types';
+import { FETCH_USER, FETCH_RATINGHIST } from '../actions/types';
 
 const initialState = {
     userExists: 0,
     name: '',
-    info: {}
+    info: {},
+    ratinghist: []
 }
 
 
@@ -19,5 +20,13 @@ export default function(state = initialState, action) {
                 info: action.payload.result[0],
                 userExists: action.userExists
             };
+        case FETCH_RATINGHIST:
+            {
+                console.log(action.payload.result);
+                return {
+                    ...state,
+                    ratinghist: action.payload.result
+                };
+            }
     }
 }

@@ -4,6 +4,7 @@ import { fetchUser, fetchRatingHist , fetchUSubmissions} from '../actions/userAc
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import RatingItem from './ratingitem.js'
+import { userinfo, userrating, userstatus } from './links'
 
 /* Available data :
 
@@ -103,23 +104,18 @@ constructor(props)
 onSubmit(e)
 {
 	e.preventDefault();
-	const string = 'https://codeforces.com/api/user.info?handles=' + this.state.name;
+	const string = userinfo + this.state.name;
 	console.log(string);
 	this.props.fetchUser(string);
-	const string2 = 'https://codeforces.com/api/user.rating?handle=' + this.state.name;
+	const string2 = userrating + this.state.name;
 	this.props.fetchRatingHist(string2);
-	const string3 = 'https://codeforces.com/api/user.status?handle=' + this.state.name;
+	const string3 = userstatus + this.state.name;
 	this.props.fetchUSubmissions(string3);
 }
 
 onChange(e)
 {
 	this.setState({[e.target.name]: e.target.value});
-	//console.log(this.props.ratinghist[0]);
-	for(var i=0;i<10;i++)
-		if(this.props.usersubmissions[i])
-			console.log(this.props.usersubmissions[i].id)
-	
 }
 
 render() {
@@ -133,10 +129,10 @@ render() {
 			<input type="text" name="name" className="form-control form-control" value={this.state.name} onChange={this.onChange} /><br/>
 			<button type="submit" className="btn btn-light">Submit</button>
 			<br/>
+      { this.props.name }	<br/>	
 			{ this.props.userexists &&
 			<div>
 			<img src={this.props.info.titlePhoto} alt="Title" height="100" width="100"></img><br/>
-			Handle : { this.props.name }	<br/>	
 			Rank : {this.props.info.rank } <br/>
 			Organisation: { this.props.info.organisation } <br/>
 			Contribution: { this.props.info.contribution } <br/>

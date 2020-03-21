@@ -3,7 +3,19 @@ import { FETCH_USER, FETCH_RATINGHIST, FETCH_USUBMISSIONS } from '../actions/typ
 const initialState = {
     userExists: 0,
     name: '',
-    info: {},
+    info: {
+      contribution: '',
+      lastOnlineTimeSeconds: '',
+      rating: '' ,
+      friendOfCount: '',
+      titlePhoto: '',
+      rank: '',
+      handle: '-e',
+      maxRating: '',
+      avatar: '',
+      registrationTimeSeconds: '',
+      maxRank: ''
+    },
     ratinghist: [],
     usersubmissions: [
         {
@@ -51,12 +63,23 @@ export default function(state = initialState, action) {
             return state;
         case FETCH_USER:
             console.log(action.payload);
+            if(action.payload.result)
+            {
             return {
                 ...state,
                 name: action.payload.result[0].handle,
                 info: action.payload.result[0],
                 userExists: action.userExists
             };
+            }
+            else {
+            return {
+              ...state,
+              name: 'User_Not_Found',
+              //info: initialState.info,
+              userExists: action.userExists
+            };
+            }
         case FETCH_RATINGHIST:
             {
                 console.log(action.payload.result);

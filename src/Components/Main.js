@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { fetchUser, fetchRatingHist , fetchUSubmissions} from '../actions/userActions'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import RatingItem from './ratingitem.js'
-import { userinfo, userrating, userstatus } from './links'
+import Form from './forms'
+import UserInfo from './UserInfo'
+import RatingHistory from './RatingHistory'
+import { BrowserRouter, Route } from 'react-router-dom'
+import UserSubmissions from './UserSubmissions'
 
 /* Available data :
 
@@ -91,84 +91,35 @@ ratinghist: [
 
 class Main extends Component {
 
-constructor(props)
-{
-		super(props);
-		this.state = {
-			name: '',
-        };
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+  chartRef = React.createRef();
+
+  render() {
+    return (
+      <React.Fragment>
+        <BrowserRouter>
+          <div className="row">
+            <div className="col-sm-1"></div>
+            <div className="col-sm-10">
+
+              <Route path='/Codux-Profile' exact component={Form}></Route>
+              <Route path='/user/:username/info' component={UserInfo}></Route>
+              <Route path='/user/:username/ratinghistory' component={RatingHistory}></Route>
+              <Route path='/user/:username/submissions' component={UserSubmissions}></Route>
+            </div>
+          </div>
+        </BrowserRouter>
+      </React.Fragment>
+    )
+  }
 }
 
-onSubmit(e)
-{
-	e.preventDefault();
-	const string = userinfo + this.state.name;
-	console.log(string);
-	this.props.fetchUser(string);
-	const string2 = userrating + this.state.name;
-	this.props.fetchRatingHist(string2);
-	const string3 = userstatus + this.state.name;
-	this.props.fetchUSubmissions(string3);
-}
-
-onChange(e)
-{
-	this.setState({[e.target.name]: e.target.value});
-}
-
-render() {
-	return (
-		<React.Fragment>
-			<div className="row">
-		<div className="col-sm-4"></div>
-		<div className="col-sm-4">
-			<form onSubmit={this.onSubmit}>
-			Enter Handle :
-			<input type="text" name="name" className="form-control form-control" value={this.state.name} onChange={this.onChange} /><br/>
-			<button type="submit" className="btn btn-light">Submit</button>
-			<br/>
-      { this.props.name }	<br/>	
-			{ this.props.userexists &&
-			<div>
-			<img src={this.props.info.titlePhoto} alt="Title" height="100" width="100"></img><br/>
-			Rank : {this.props.info.rank } <br/>
-			Organisation: { this.props.info.organisation } <br/>
-			Contribution: { this.props.info.contribution } <br/>
-			Rating: { this.props.info.rating } <br/>
-			Maxrank: { this.props.info.maxRank } <br/>
-			MaxRating: { this.props.info.maxRating } <br/>
-			
-			<br/>
-			{this.props.ratinghist.map((contest, index) => (
-        	<RatingItem key={index} item={contest} num={index+1} />
-      		))}
-			</div>
-			}
-			</form>
-		</div>
-		<div className="col-sm-4"></div>
-		</div>
-		</React.Fragment>
-		)
-	}
-}
-
-Main.propTypes = {
-	fetchUser: PropTypes.func.isRequired
-  };
 
 const mapStateToProps = state => ({
-	userexists: state.user.userExists,
-	name: state.user.name,
-	info: state.user.info,
-	ratinghist: state.user.ratinghist,
-	usersubmissions: state.user.usersubmissions
+  userexists: state.user.userExists,
+  name: state.user.name,
+  info: state.user.info,
+  ratinghist: state.user.ratinghist,
+  usersubmissions: state.user.usersubmissions
 })
 
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ fetchUser, fetchRatingHist, fetchUSubmissions }, dispatch)
-  }
-
-export default connect(mapStateToProps , mapDispatchToProps)( Main );
+export default connect(mapStateToProps, null)(Main);

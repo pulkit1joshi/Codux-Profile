@@ -10,12 +10,12 @@ import store from './store'
 function App() {
   return (
     <Provider store={store}>
-    <div className="App">
-    <hr/>
-    <Main/>
-    </div>
+      <div className="App">
+        <hr />
+        <Main />
+      </div>
     </Provider>
-    );
-  }
+  );
+}
 
-  export default App;
+export default App;

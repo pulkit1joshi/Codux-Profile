@@ -1,8 +1,10 @@
 import { FETCH_USER, FETCH_RATINGHIST, FETCH_USUBMISSIONS } from './types';
+import {userstatus , userrating, userinfo } from './links'
 
 export const fetchUser = string => dispatch => {
     console.log("User fetched");
-    fetch(string)
+    const url = userinfo + string;
+    fetch(url)
       .then(res => res.json())
       .then(userData =>
         dispatch({
@@ -20,26 +22,30 @@ export const fetchUser = string => dispatch => {
     });
   };
 
-export const fetchRatingHist = string => dispatch => {
-    console.log('Rating History Fetched');
-    fetch(string)
-      .then(res => res.json())
-      .then(ratingData =>
-        dispatch({
-          type: FETCH_RATINGHIST,
-          payload: ratingData,
-        })
-      );
-}
-
 export const fetchUSubmissions = string => dispatch => {
     console.log('Submissions Fetched');
-    fetch(string)
+    const url = userstatus + string;
+    fetch(url)
       .then(res => res.json())
       .then(submissionData =>
         dispatch({
           type: FETCH_USUBMISSIONS,
           payload: submissionData,
+          name: string
+        })
+      );
+}
+
+export const fetchRatingHist = string => dispatch => {
+    console.log('Rating History Fetched');
+    const url = userrating + string;
+    fetch(url)
+      .then(res => res.json())
+      .then(ratingData =>
+        dispatch({
+          type: FETCH_RATINGHIST,
+          payload: ratingData,
+          name: string
         })
       );
 }

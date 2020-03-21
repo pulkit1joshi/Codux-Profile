@@ -1,4 +1,4 @@
-import { FETCH_USER, FETCH_RATINGHIST } from './types';
+import { FETCH_USER, FETCH_RATINGHIST, FETCH_USUBMISSIONS } from './types';
 
 export const fetchUser = string => dispatch => {
     console.log("User fetched");
@@ -28,6 +28,18 @@ export const fetchRatingHist = string => dispatch => {
         dispatch({
           type: FETCH_RATINGHIST,
           payload: ratingData,
+        })
+      );
+}
+
+export const fetchUSubmissions = string => dispatch => {
+    console.log('Submissions Fetched');
+    fetch(string)
+      .then(res => res.json())
+      .then(submissionData =>
+        dispatch({
+          type: FETCH_USUBMISSIONS,
+          payload: submissionData,
         })
       );
 }

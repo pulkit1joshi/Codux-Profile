@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Form from './forms'
+import { HashRouter, Route } from 'react-router-dom'
+import { Switch } from "react-router-dom";
+
+import Form from './SubComponents/forms'
 import UserInfo from './UserInfo'
 import RatingHistory from './RatingHistory'
-import { BrowserRouter, Route } from 'react-router-dom'
 import UserSubmissions from './UserSubmissions'
 
 /* Available data :
@@ -96,18 +98,19 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <BrowserRouter>
+        <HashRouter>
           <div className="row">
             <div className="col-sm-1"></div>
             <div className="col-sm-10">
-
-              <Route path='/Codux-Profile' exact component={Form}></Route>
+              <Switch>
+              <Route path='/' exact component={Form}></Route>
               <Route path='/user/:username/info' component={UserInfo}></Route>
               <Route path='/user/:username/ratinghistory' component={RatingHistory}></Route>
               <Route path='/user/:username/submissions' component={UserSubmissions}></Route>
+              </Switch>
             </div>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </React.Fragment>
     )
   }

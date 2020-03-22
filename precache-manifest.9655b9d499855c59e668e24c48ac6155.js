@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "91d8920017812f0a7f743b0492f83979",
+    "revision": "75ed8acb2dd8b377fa98d057b4d4afca",
     "url": "/Codux-Profile/index.html"
   },
   {
-    "revision": "553d0810267fcdf49046",
+    "revision": "e063a6c51400eefbe8dc",
     "url": "/Codux-Profile/static/css/main.c9b7e7ef.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Codux-Profile/static/js/2.65e51f1b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "553d0810267fcdf49046",
-    "url": "/Codux-Profile/static/js/main.42546fbd.chunk.js"
+    "revision": "e063a6c51400eefbe8dc",
+    "url": "/Codux-Profile/static/js/main.b5f31def.chunk.js"
   },
   {
     "revision": "4d1339d8e498d26d82f6",

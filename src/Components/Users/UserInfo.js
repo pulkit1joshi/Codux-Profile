@@ -40,20 +40,20 @@ export class UserInfo extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{padding: "5rem"}}>
-                {this.props.name}	<br />
-                {this.props.userexists &&
-                    <div>
-                        <img src={this.props.info.titlePhoto} alt="Title" height="100" width="100"></img><br />
+                <div style={{ padding: "5rem" }}>
+                    {this.props.name}	<br />
+                    {this.props.userexists &&
+                        <div>
+                            <img src={this.props.info.titlePhoto} alt="Title" height="100" width="100"></img><br />
 			Rank : {this.props.info.rank} <br />
 			Organisation: {this.props.info.organisation} <br />
 			Contribution: {this.props.info.contribution} <br />
 			Rating: {this.props.info.rating} <br />
 			Maxrank: {this.props.info.maxRank} <br />
 			MaxRating: {this.props.info.maxRating} <br />
-                        <br />
-                    </div>
-                }
+                            <br />
+                        </div>
+                    }
                 </div>
             </React.Fragment>
         )

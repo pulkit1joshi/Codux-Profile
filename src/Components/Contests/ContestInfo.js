@@ -7,15 +7,18 @@ import { Switch } from "react-router-dom";
 import { fetchContests } from '../../actions/cfactions'
 import { Link } from 'react-router-dom'
 import Upcoming from './Upcoming'
-import Div1 from './Div1.js';
-import Div2 from './Div2.js';
-import Div3 from './Div3.js';
-import Global from './global';
+import Div1 from './Type/Div1.js';
+import Div2 from './Type/Div2.js';
+import Div3 from './Type/Div3.js';
+import Global from './Type/global';
+import  CFLIST  from './Format/Cf';
+import  Ioilist  from './Format/Ioi';
+import  Icpclist  from './Format/Icpc';
+import Home from './Home';
 
 export class ContestInfo extends Component {
     componentDidMount() {
         if(this.props.fetched === 0) this.props.fetchContests();
-        console.log("ContestInfo");
     }
     render() {
         return (
@@ -38,15 +41,32 @@ export class ContestInfo extends Component {
                                 <Link to={`/contests/global`} className="dropdown-item "> Global </Link>
                                 </div>
                             </li>
+                            <li className="nav-item dropdown">
+                                <Link to={'#'} className="nav-link dropdown-toggle" data-toggle="dropdown">Format</Link>
+                                <div class="dropdown-menu bg-light">
+                                <Link to={`/contests/format/cf`} className="dropdown-item "> CF </Link>
+                                <Link to={`/contests/format/ioi`} className="dropdown-item "> IOI</Link>
+                                <Link to={`/contests/format/icpc`} className="dropdown-item "> ICPC </Link>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
 
-                    <Switch>
+                    <br/>
+
+                    
+
+                    <Switch> 
+                        <Route path='/contests/' exact component={() => (<Home counts={this.props.counts} style={{margin: "auto"}}/>)  }>
+                        </Route>
                         <Route path='/contests/upcoming/' exact component={Upcoming}></Route>
                         <Route path='/contests/div1/' exact component={Div1}></Route>
                         <Route path='/contests/div2/' exact component={Div2}></Route>
                         <Route path='/contests/div3/' exact component={Div3}></Route>
                         <Route path='/contests/global/' exact component={Global}></Route>
+                        <Route path='/contests/format/cf/' exact component={CFLIST}></Route>
+                        <Route path='/contests/format/ioi/' exact component={Ioilist}></Route>
+                        <Route path='/contests/format/icpc/' exact component={Icpclist}></Route>
                     </Switch>
 
                 </HashRouter>
@@ -60,7 +80,8 @@ ContestInfo.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    fetched: state.contest.fetched
+    fetched: state.contest.fetched,
+    counts: state.contest.count
 })
 
 export default connect(mapStateToProps, { fetchContests })(ContestInfo)

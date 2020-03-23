@@ -8,23 +8,32 @@ export default class ContestItem extends Component {
             time: "",
             timeleft: "",
             days: "",
+            link: "",
         }
         this.interval = '';
     }
 
     componentDidMount() {
 
-        let dateObj = new Date(this.props.item.startTimeSeconds * 1000);
-
-        let formattedTime = dateObj.toString();
+        let dateObj = new Date(this.props.item.startTimeSeconds*1000);
+        function formatJSDate(dt)
+        {
+         return (dt.getMonth()+1 + '/' + dt.getDate() + '/' + (dt.getYear()+1900) + ' ' + dt.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: false }));
+        }
+        let unix = new Date().getTime() / 1000;
+        let link = "https://codeforces.com/contest/" + this.props.item.id;
+        if(this.props.item.startTimeSeconds > unix) link = "";
         this.setState({
-            time: formattedTime,
+            time: formatJSDate(dateObj),
+            link: link,
         })
+        console.log("Contest Item Mounted");
         if(this.props.type === 1)
         {
+            
         this.interval = setInterval(() => {
-            let time = this.props.item.startTimeSeconds;
             let unix = new Date().getTime() / 1000;
+            let time = this.props.item.startTimeSeconds;
             let timeleft = time - unix;
             let days = Math.floor(timeleft / (3600 * 24));
             timeleft = timeleft % (3600 * 24);
@@ -34,9 +43,14 @@ export default class ContestItem extends Component {
             timeleft = timeleft % 60;
             let seconds = Math.floor(timeleft);
             let formattedTime = hours + "h:" + min + "m:" +seconds + "s";
+            var str = "Days: " + days;
+            if(!days)
+            {
+                str="Today"
+            }
             this.setState({
                 timeleft: formattedTime,
-                days: "Days:" + days,
+                days: str,
             })
         },1000);
     }
@@ -60,7 +74,7 @@ export default class ContestItem extends Component {
                 <tr>
                     <td>{this.props.num}</td>
                     <td>{this.state.time}</td>
-                    <td><a href={"https://codeforces.com/contest/"+this.props.item.id}>{ this.props.item.name}</a></td>
+                    <td><a href={this.state.link}>{ this.props.item.name}</a></td>
                     {renderAuthButton()}
                 </tr>
         )

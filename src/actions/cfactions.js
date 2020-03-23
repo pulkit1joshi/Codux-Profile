@@ -14,10 +14,22 @@ export const fetchContests = () => dispatch => {
             let div1 = [];
             let div2 = [];
             let div3 = [];
+            let cf = [];
+            let ioi = [];
+            let icpc = [];
             let global = [];
             cdata.result.map((contest, index) => {
                 if (contest.phase === "BEFORE") {
                     upcom.push(contest);
+                }
+                if (contest.type === "CF") {
+                    cf.push(contest);
+                }
+                else if (contest.type === "IOI") {
+                    ioi.push(contest);
+                }
+                else if (contest.type === "ICPC") {
+                    icpc.push(contest);
                 }
                 if (contest.name.includes("Div. 1")) {
                     div1.push(contest);
@@ -40,7 +52,21 @@ export const fetchContests = () => dispatch => {
                 div1list: div1,
                 div2list: div2,
                 div3list: div3,
+                ioilist: ioi,
+                icpclist: icpc,
+                cflist: cf,
                 globallist: global,
+                count: {
+                    div1: div1.length,
+                    div2: div2.length,
+                    div3: div3.length,
+                    ioi: ioi.length,
+                    icpc: icpc.length,
+                    cf: cf.length,
+                    global: global.length,
+                    upcoming: upcom.length,
+                    total: cdata.result.length,
+                }
             })
         }
         );

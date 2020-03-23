@@ -8,6 +8,7 @@ import { fetchContests } from '../../actions/cfactions'
 export class Upcoming extends Component {
     componentDidMount() {
         if(this.props.fetched===0) this.props.fetchContests();
+        console.log("Upcoming is loaded");
     }
 
     render() {

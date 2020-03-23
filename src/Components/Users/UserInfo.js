@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../actions/userActions'
+import { fetchUser } from '../../actions/userActions'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
@@ -24,19 +24,23 @@ export class UserInfo extends Component {
         return (
             <React.Fragment>
 
-                <nav class="navbar navbar-expand-sm bg-light navbar-light">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <Link to={`/user/${this.props.name}/info`} className="nav-link"> Basic </Link>
+                <nav className="navbar navbar-expand-sm bg-light navbar-light justify-content-center nav-tabs">
+                    <ul className="navbar-nav ">
+                        <li className="nav-item">
+                            <Link to={`/user`} className="nav-link"> {"<"} </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
+                            <Link to={`/user/${this.props.name}/info`} className="nav-link active"> Basic </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to={`/user/${this.props.name}/ratinghistory`} className="nav-link"> Rating History </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link to={`/user/${this.props.name}/submissions`} className="nav-link"> Submissions </Link>
                         </li>
                     </ul>
                 </nav>
+                <div style={{padding: "5rem"}}>
                 {this.props.name}	<br />
                 {this.props.userexists &&
                     <div>
@@ -50,6 +54,7 @@ export class UserInfo extends Component {
                         <br />
                     </div>
                 }
+                </div>
             </React.Fragment>
         )
     }

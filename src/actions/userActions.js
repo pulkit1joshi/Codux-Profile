@@ -1,5 +1,5 @@
 import { FETCH_USER, FETCH_RATINGHIST, FETCH_USUBMISSIONS } from './types';
-import {userstatus , userrating, userinfo } from './links'
+import {userstatus , userrating, userinfo } from './links';
 
 export const fetchUser = string => dispatch => {
     console.log("User fetched");

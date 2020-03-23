@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Codux-Profile/precache-manifest.9655b9d499855c59e668e24c48ac6155.js"
+  "/Codux-Profile/precache-manifest.2eb16e39ac87051e96cd6749076531e4.js"
 );
 
 self.addEventListener('message', (event) => {

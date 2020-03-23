@@ -29,6 +29,6 @@ from codeforces only.
 - [x] Use react-router router
 - [x] Use redux to store states at application level.
 - [x] Set up API endpoints for Contest features.
-- [] Design UI?UX of website
-- [] Add New Feature (3rd)
-- [] Make native app
+- [ ] Design UI/UX of website
+- [ ] Add New Feature (3rd)
+- [ ] Make native app

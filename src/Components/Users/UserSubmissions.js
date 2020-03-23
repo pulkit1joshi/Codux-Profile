@@ -30,7 +30,7 @@ export class UserSubmissions extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{ padding: "5rem" }}>
+                <div style={{ padding: "3rem" }}>
                     {this.props.name}
                 </div>
             </React.Fragment>

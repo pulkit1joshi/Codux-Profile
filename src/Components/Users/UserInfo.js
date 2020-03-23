@@ -40,7 +40,7 @@ export class UserInfo extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{ padding: "5rem" }}>
+                <div style={{ padding: "3rem" }}>
                     {this.props.name}	<br />
                     {this.props.userexists &&
                         <div>

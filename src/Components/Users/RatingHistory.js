@@ -55,7 +55,7 @@ export class RatingHistory extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{padding: "5rem"}}>
+                <div style={{padding: "3rem"}}>
                 <Graph data={this.getdata()} labels={this.getlabels()} />
                 {this.props.ratinghist.map((contest, index) => (
                     <RatingItem key={index} item={contest} num={index + 1} />

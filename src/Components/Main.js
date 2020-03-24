@@ -97,20 +97,20 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <HashRouter>
-          <div>
-          <div className="row">
-            <div className="col-sm-1"></div>
-            <div className="col-sm-10">
-              <Switch> 
-              <Route path='/contests/' component={ContestInfo}></Route>   
-              <Route path='/user/' component={Users}></Route>   
-              </Switch>
-            </div>
+      <HashRouter>
+        <div>
+        <div className="row">
+          <div className="col-sm-1"></div>
+          <div className="col-sm-10">
+            <Switch> 
+            <Route path='/contests/' component={ContestInfo}></Route>   
+            <Route path='/user/' component={Users}></Route>   
+            </Switch>
           </div>
-          </div>
-        </HashRouter>
-      </React.Fragment>
+        </div>
+        </div>
+      </HashRouter>
+    </React.Fragment>
     )
   }
 }

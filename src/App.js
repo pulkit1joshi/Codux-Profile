@@ -22,7 +22,7 @@ function App() {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav mr-auto ml-auto work" data-toggle="collapse" data-target="#navbarNav">
+              <ul className="navbar-nav ml-auto work" data-toggle="collapse" data-target="#navbarNav">
                 <li className="nav-item">
                   <Link to={`/contests`} className="nav-link"> Contests </Link>
                 </li>

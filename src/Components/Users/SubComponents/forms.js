@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './from.css';
 
 class Form extends Component {
 
@@ -17,15 +18,17 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="row">
+                <div className="col-sm-2"></div>
+                <div className="col-sm-8">
                 <form>
-                    Enter Handle :
-			    <input type="text" name="name" className="form-control form-control" value={this.state.name} onChange={this.onChange} /><br />
-                    <Link to={`/user/${this.state.name}/info`}><button type="submit" className="btn btn-light">Submit</button></Link>
+                
+			    <input type="text" name="name" className="form-control form-control "  id="ip1" value={this.state.name} placeholder="Your Handle Here" onChange={this.onChange} /><br /><br/>
+                    <Link to={`/user/${this.state.name}/info`}><button type="submit"  className="btn btn-dark">Get Data</button></Link>
                     <br />
+                   
                 </form>
-
+                </div>
             </div>
         )
     }

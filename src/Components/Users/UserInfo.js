@@ -4,6 +4,7 @@ import { fetchUser } from '../../actions/userActions'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+
 export class UserInfo extends Component {
 
     constructor(props) {
@@ -22,6 +23,7 @@ export class UserInfo extends Component {
 
     render() {
         return (
+            
             <React.Fragment>
 
                 <nav className="navbar navbar-expand-sm bg-light navbar-light justify-content-center nav-tabs">
@@ -40,18 +42,20 @@ export class UserInfo extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{ padding: "3rem" }}>
-                    {this.props.name}	<br />
+                <div class="jumbotron" style={{padding: "3rem" }}>
+                <strong>{this.props.name} </strong>	<br /><br/>
                     {this.props.userexists &&
-                        <div>
-                            <img src={this.props.info.titlePhoto} alt="Title" height="100" width="100"></img><br />
-			Rank : {this.props.info.rank} <br />
-			Organisation: {this.props.info.organisation} <br />
-			Contribution: {this.props.info.contribution} <br />
-			Rating: {this.props.info.rating} <br />
-			Maxrank: {this.props.info.maxRank} <br />
-			MaxRating: {this.props.info.maxRating} <br />
+                        <div class="ip">
+                            <img src={this.props.info.titlePhoto} class="img-thumbnail " alt="Title" height="100" width="100"></img><br /><br/>
+ 		    <ul class="list-group">
+            <li class="list-group-item"><strong>Rank</strong> : {this.props.info.rank}</li>
+			<li class="list-group-item"><strong>Organisation:</strong>{this.props.info.organisation}</li>
+			<li class="list-group-item"><strong>Contributions:</strong>{this.props.info.contribution}</li>
+			<li class="list-group-item"><strong>Rating:</strong> {this.props.info.rating}</li>
+			<li class="list-group-item"><strong>Maxrank:</strong> {this.props.info.maxRank}</li>
+			<li class="list-group-item"><strong>MaxRating:</strong> {this.props.info.maxRating}</li>
                             <br />
+                            </ul>
                         </div>
                     }
                 </div>

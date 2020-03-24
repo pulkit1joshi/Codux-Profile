@@ -13,8 +13,11 @@ function App() {
   return (
     <Provider store={store}>
       <HashRouter>
-        <div>
-          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div>
+          <nav className="navbar navbar-expand-sm bg-dark navbar-dark scrolling-navbar ">
+            <div class="container">
+             <a class="navbar-brand " href="/"><strong>Codux</strong></a>
+             </div>
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to={`/contests`} className="nav-link"> Contests </Link>
@@ -29,6 +32,8 @@ function App() {
                 <a className="nav-link" href="/">About</a>
               </li>
             </ul>
+           
+
           </nav>
         </div>
         <div className="container" style={ {paddingBottom: "60px;"} }>

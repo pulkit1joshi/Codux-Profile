@@ -6,7 +6,7 @@ from codeforces only.
 
 ## Current Features
 ### User Features
-* Basic User Information
+* Basic User Informationgi
 * Rating History 
 * Contests History
 * Submissions

@@ -14,10 +14,9 @@ export class RatingHistory extends Component {
         this.props.fetchRatingHist(string2);
     }
 
-    getdata=() => {
+    getdata = () => {
         var data2 = [];
-        this.props.ratinghist.map((datapoint, index) => 
-        {
+        this.props.ratinghist.map((datapoint, index) => {
             data2.push(datapoint.oldRating);
             return 0;
         });
@@ -25,10 +24,9 @@ export class RatingHistory extends Component {
         return data2;
     }
 
-    getlabels=() => {
+    getlabels = () => {
         var data2 = [];
-        this.props.ratinghist.map((datapoint, index) => 
-        {
+        this.props.ratinghist.map((datapoint, index) => {
             data2.push(index);
             return 0;
         });
@@ -41,7 +39,7 @@ export class RatingHistory extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-expand-sm bg-light navbar-light nav-tabs">
                     <ul className="navbar-nav nav-fill mx-auto">
-                    <li className="nav-item">
+                        <li className="nav-item">
                             <Link to={`/user`} className="nav-link"> {"<"} </Link>
                         </li>
                         <li className="nav-item">
@@ -55,12 +53,12 @@ export class RatingHistory extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div style={{padding: "3rem"}}>
-                <Graph data={this.getdata()} labels={this.getlabels()} />
-                {this.props.ratinghist.map((contest, index) => (
-                    <RatingItem key={index} item={contest} num={index + 1} />
-                ))}
-</div>
+                <div style={{ padding: "3rem" }}>
+                    <Graph data={this.getdata()} labels={this.getlabels()} />
+                    {this.props.ratinghist.map((contest, index) => (
+                        <RatingItem key={index} item={contest} num={index + 1} />
+                    ))}
+                </div>
             </React.Fragment>
         )
     }

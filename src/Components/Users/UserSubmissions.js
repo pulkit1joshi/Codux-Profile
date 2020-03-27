@@ -26,97 +26,110 @@ export class UserSubmissions extends Component {
             "#95a5a6",
             "#9b59b6",
             "#f1c40f",
+            "#3448db",
+            "#55a5a6",
+            "#9b19b6",
+            "#f1c20f",
+            "#f1c42f",
+            "#34499a",
+            "#3498ad",
+            "#95b2a6",
         ]
         return (
             <React.Fragment>
-                <Nav />
-                <div style={{ paddingTop: "3rem" }} >
-
-
-                    <List heading="Submissions" data={this.props.verdictinfo} />
-
-
-                    <div className="card" style={{ marginTop: "3rem" }}>
-                        <div class="card-header bg-info text-white">
-                            Question type analysis
+                <Nav name={this.props.name} />
+                <List heading="Submissions" data={this.props.verdictinfo} />
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        Topics analysis
                     </div>
-                        <div class="card-body">
-                            <HBar tags={this.props.tags} data={this.props.problems} />
+                    <div class="card-body">
+                        <HBar tags={this.props.tags} data={this.props.problems} />
+                    </div>
+                </div>
+
+
+
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        Verdict Analysis
+                    </div>
+                    <div class="card-body">
+
+                        <PieChart tags={this.props.verdicts} data={this.props.verdictcount} color={color} />
+                    </div>
+                </div>
+
+
+                <List heading="Problems Summary" data={this.props.problemsinfo} />
+
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        AC analysis
+                    </div>
+                    <div class="card-body">
+                        <Bar tags={this.props.qbyindexlist} data={this.props.qbyindex} />
+                    </div>
+                </div>
+
+
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        Languages Analysis
+                    </div>
+                    <div class="card-body">
+                        <PieChart tags={this.props.languages} data={this.props.langdata} color={color} />
+
+                    </div>
+                </div>
+
+                <div style={{ paddingTop: "2rem" }}>
+                    <div class="card" >
+                        <div class="card-header bg-info text-white d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <span type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Unsolved List</span>
+                            <span type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                +</span>
+                        </div>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="list-group list-group-flush" style={{ fontSize: "13px" }}>
+
+                                {this.props.unsolved.map((datapoint, index) => (
+                                    <a href=
+                                        {`https://codeforces.com/contest/${datapoint.contestId}/problem/${datapoint.index}`}
+                                    >
+                                        <li class="list-group-item d-flex justify-content-between"> {datapoint.name}
+                                            <span class="card" style={{ padding: "1px" }}> {datapoint.contestId}-{datapoint.index} </span>
+                                        </li>
+                                    </a>
+                                ))}
+                            </ul>
                         </div>
                     </div>
+                </div>
 
 
+                <div style={{ paddingTop: "2rem", paddingBottom: "3rem" }}>
+                    <div class="card" >
+                        <div class="card-header bg-info text-white d-flex justify-content-between" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <span type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">Solved List</span>
+                            <span type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                +</span>
+                        </div>
+                        <div class="collapse" id="collapseExample2">
+                            <ul class="list-group list-group-flush" style={{ fontSize: "13px" }}>
 
-                    <div className="card" style={{ marginTop: "3rem" }}>
-                        <div class="card-header bg-info text-white">
-                            Verdict Analysis
-                    </div>
-                        <div class="card-body">
-
-                            <PieChart tags={this.props.verdicts} data={this.props.verdictcount} color={color} />
+                                {this.props.solved.map((datapoint, index) => (
+                                    <a href=
+                                        {`https://codeforces.com/contest/${datapoint.contestId}/problem/${datapoint.index}`}
+                                    >
+                                        <li class="list-group-item d-flex justify-content-between"> {datapoint.name}
+                                            <span class="card" style={{ padding: "1px" }}> {datapoint.contestId}-{datapoint.index} </span>
+                                        </li>
+                                    </a>
+                                ))}
+                            </ul>
                         </div>
                     </div>
-
-                    <List heading="Problems Summary" data={this.props.problemsinfo} />
-
-                    <div className="card" style={{ marginTop: "3rem" }}>
-                        <div class="card-header bg-info text-white">
-                            AC analysis
-                    </div>
-                        <div class="card-body">
-                            <Bar tags={this.props.qbyindexlist} data={this.props.qbyindex} />
-                        </div>
-                    </div>
-
-                    <div style={{ paddingTop: "3rem" }}>
-                        <div class="card" >
-                            <div class="card-header bg-info text-white d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                <span type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Unsolved List</span>
-                                <span type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    +</span>
-                            </div>
-                            <div class="collapse" id="collapseExample">
-                                <ul class="list-group list-group-flush" style={{ fontSize: "13px" }}>
-
-                                    {this.props.unsolved.map((datapoint, index) => (
-                                        <a href=
-                                            {`https://codeforces.com/contest/${datapoint.contestId}/problem/${datapoint.index}`}
-                                        >
-                                            <li class="list-group-item d-flex justify-content-between"> {datapoint.name}
-                                                <span class="card" style={{ padding: "1px" }}> {datapoint.contestId}-{datapoint.index} </span>
-                                            </li>
-                                        </a>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
-                        <div class="card" >
-                            <div class="card-header bg-info text-white d-flex justify-content-between" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                <span type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">Solved List</span>
-                                <span type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                    +</span>
-                            </div>
-                            <div class="collapse" id="collapseExample2">
-                                <ul class="list-group list-group-flush" style={{ fontSize: "13px" }}>
-
-                                    {this.props.solved.map((datapoint, index) => (
-                                        <a href=
-                                            {`https://codeforces.com/contest/${datapoint.contestId}/problem/${datapoint.index}`}
-                                        >
-                                            <li class="list-group-item d-flex justify-content-between"> {datapoint.name}
-                                                <span class="card" style={{ padding: "1px" }}> {datapoint.contestId}-{datapoint.index} </span>
-                                            </li>
-                                        </a>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </React.Fragment >
         )
@@ -184,7 +197,18 @@ const mapStateToProps = state => {
     let qbyindex = [];
     let solved = [];
 
+    let languages = [];
+    let langdata = [];
+
     for (let i = 0; i < state.user.usersubmissions.length; i++) {
+        if (!languages.includes(state.user.usersubmissions[i].programmingLanguage)) {
+            languages.push(state.user.usersubmissions[i].programmingLanguage);
+            langdata[state.user.usersubmissions[i].programmingLanguage] = 0;
+        }
+        else {
+            langdata[state.user.usersubmissions[i].programmingLanguage] += 1;
+        }
+
         if (state.user.usersubmissions[i].verdict === 'OK') {
             if (state.user.usersubmissions[i].problem.rating > maxrating) maxrating = state.user.usersubmissions[i].problem.rating;
             if (state.user.usersubmissions[i].problem.rating)
@@ -214,11 +238,16 @@ const mapStateToProps = state => {
 
         }
     }
+    languages = Object.keys(langdata)
+    let langdata2 = [];
+    for (let i = 0; i < languages.length; i++) {
+        langdata2.push(langdata[languages[i]]);
+    }
+
     let solvedlist = [];
     for (let i = 0; i < uniqueprob.length; i++) {
         if (!solved.includes(uniqueprob[i].name)) {
             unsolved.push(uniqueprob[i]);
-            console.log(uniqueprob[i]);
         }
         else {
             solvedlist.push(uniqueprob[i]);
@@ -290,6 +319,8 @@ const mapStateToProps = state => {
         solved: solvedlist,
         qbyindex: qbyindex,
         qbyindexlist: qbyindexlist,
+        languages: languages,
+        langdata: langdata2,
     }
 }
 

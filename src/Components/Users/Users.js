@@ -21,7 +21,7 @@ class Users extends Component {
               <div className="col-sm-1"></div>
               <div className="col-sm-10">
                 <Switch>
-                  <Route path='/user/' exact component={Form}></Route>
+                  <Route path='/' exact component={Form}></Route>
                   <Route path='/user/:username/info' exact component={UserInfo}></Route>
                   <Route path='/user/:username/ratinghistory' exact component={RatingHistory}></Route>
                   <Route path='/user/:username/submissions' exact component={UserSubmissions}></Route>

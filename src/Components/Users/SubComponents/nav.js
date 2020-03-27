@@ -9,7 +9,7 @@ export default class Nav extends Component {
                 <nav className="navbar navbar-expand-sm bg-light navbar-light nav-tabs">
                     <ul className="navbar-nav nav-fill mx-auto" id="navid">
                         <li className="nav-item">
-                            <Link to={`/user`} className="nav-link"> {"<"} </Link>
+                            <Link to={`/`} className="nav-link"> {"<"} </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/user/${this.props.name}/info`} className="nav-link" > Basic </Link>

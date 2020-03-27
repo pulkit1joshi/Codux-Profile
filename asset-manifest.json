@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Codux-Profile/static/css/main.735dcaf8.chunk.css",
-    "main.js": "/Codux-Profile/static/js/main.2f6a7286.chunk.js",
-    "main.js.map": "/Codux-Profile/static/js/main.2f6a7286.chunk.js.map",
+    "main.js": "/Codux-Profile/static/js/main.4cd16e55.chunk.js",
+    "main.js.map": "/Codux-Profile/static/js/main.4cd16e55.chunk.js.map",
     "runtime-main.js": "/Codux-Profile/static/js/runtime-main.ded9a149.js",
     "runtime-main.js.map": "/Codux-Profile/static/js/runtime-main.ded9a149.js.map",
     "static/css/2.34ca2c66.chunk.css": "/Codux-Profile/static/css/2.34ca2c66.chunk.css",
     "static/js/2.328c6b3c.chunk.js": "/Codux-Profile/static/js/2.328c6b3c.chunk.js",
     "static/js/2.328c6b3c.chunk.js.map": "/Codux-Profile/static/js/2.328c6b3c.chunk.js.map",
     "index.html": "/Codux-Profile/index.html",
-    "precache-manifest.71f636ce3985cc7759452c0a37853e9f.js": "/Codux-Profile/precache-manifest.71f636ce3985cc7759452c0a37853e9f.js",
+    "precache-manifest.f0a347552fcdfcf162d3ecf27c849aff.js": "/Codux-Profile/precache-manifest.f0a347552fcdfcf162d3ecf27c849aff.js",
     "service-worker.js": "/Codux-Profile/service-worker.js",
     "static/css/2.34ca2c66.chunk.css.map": "/Codux-Profile/static/css/2.34ca2c66.chunk.css.map",
     "static/css/main.735dcaf8.chunk.css.map": "/Codux-Profile/static/css/main.735dcaf8.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.34ca2c66.chunk.css",
     "static/js/2.328c6b3c.chunk.js",
     "static/css/main.735dcaf8.chunk.css",
-    "static/js/main.2f6a7286.chunk.js"
+    "static/js/main.4cd16e55.chunk.js"
   ]
 }

@@ -48,7 +48,7 @@ function App() {
                   <Link to={`/contests`} className="nav-link"> Contests </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={`/user`} className="nav-link"> Search </Link>
+                  <Link to={`/`} className="nav-link"> Search </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="https://github.com/pulkit1joshi/Codux-Profile">Git</a>

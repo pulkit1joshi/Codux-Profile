@@ -23,6 +23,9 @@ const options = {
 	},
 	plugins: {
 		datalabels: {
+			anchor: 'center',
+			clip: true,
+			clamp: true,
 			display: false,
 			color: 'white',
 		}
@@ -64,17 +67,19 @@ export default class PieChart extends Component {
 		})*/
 		//labels = this.props.tags;
 		data2 = this.props.data;
+
+		console.log("DATA:" + data2);
 		while (coloR.length < labels.length) {
 			let col = dynamicColors();
 			//console.log(col);
-			while (coloR.indexOf(col) !== -1)
+			while (coloR.includes(col) >= 0)
 				col = dynamicColors();
 			coloR.push(col);
 		}
-
 		for (let i = 0; i < this.props.tags.length; i++) {
 			labels.push(this.props.tags[i] + " : " + data2[i]);
 		}
+
 		let data = {
 			labels: labels,
 			datasets: [

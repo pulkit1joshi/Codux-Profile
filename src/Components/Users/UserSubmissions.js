@@ -26,6 +26,14 @@ export class UserSubmissions extends Component {
             "#95a5a6",
             "#9b59b6",
             "#f1c40f",
+            "#3448db",
+            "#55a5a6",
+            "#9b19b6",
+            "#f1c20f",
+            "#f1c42f",
+            "#34499a",
+            "#3498ad",
+            "#95b2a6",
         ]
         return (
             <React.Fragment>
@@ -52,6 +60,7 @@ export class UserSubmissions extends Component {
                     </div>
                 </div>
 
+
                 <List heading="Problems Summary" data={this.props.problemsinfo} />
 
                 <div className="card" style={{ marginTop: "2rem" }}>
@@ -60,6 +69,17 @@ export class UserSubmissions extends Component {
                     </div>
                     <div class="card-body">
                         <Bar tags={this.props.qbyindexlist} data={this.props.qbyindex} />
+                    </div>
+                </div>
+
+
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        Languages Analysis
+                    </div>
+                    <div class="card-body">
+                        <PieChart tags={this.props.languages} data={this.props.langdata} color={color} />
+
                     </div>
                 </div>
 
@@ -177,7 +197,18 @@ const mapStateToProps = state => {
     let qbyindex = [];
     let solved = [];
 
+    let languages = [];
+    let langdata = [];
+
     for (let i = 0; i < state.user.usersubmissions.length; i++) {
+        if (!languages.includes(state.user.usersubmissions[i].programmingLanguage)) {
+            languages.push(state.user.usersubmissions[i].programmingLanguage);
+            langdata[state.user.usersubmissions[i].programmingLanguage] = 0;
+        }
+        else {
+            langdata[state.user.usersubmissions[i].programmingLanguage] += 1;
+        }
+
         if (state.user.usersubmissions[i].verdict === 'OK') {
             if (state.user.usersubmissions[i].problem.rating > maxrating) maxrating = state.user.usersubmissions[i].problem.rating;
             if (state.user.usersubmissions[i].problem.rating)
@@ -207,11 +238,16 @@ const mapStateToProps = state => {
 
         }
     }
+    languages = Object.keys(langdata)
+    let langdata2 = [];
+    for (let i = 0; i < languages.length; i++) {
+        langdata2.push(langdata[languages[i]]);
+    }
+
     let solvedlist = [];
     for (let i = 0; i < uniqueprob.length; i++) {
         if (!solved.includes(uniqueprob[i].name)) {
             unsolved.push(uniqueprob[i]);
-            console.log(uniqueprob[i]);
         }
         else {
             solvedlist.push(uniqueprob[i]);
@@ -283,6 +319,8 @@ const mapStateToProps = state => {
         solved: solvedlist,
         qbyindex: qbyindex,
         qbyindexlist: qbyindexlist,
+        languages: languages,
+        langdata: langdata2,
     }
 }
 

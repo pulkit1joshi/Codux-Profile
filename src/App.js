@@ -9,6 +9,7 @@ import { HashRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 
+
 function App() {
   return (
     <Provider store={store}>
@@ -41,11 +42,11 @@ function App() {
 
           </nav>
         </div>
-        <div className="container" style={{ paddingBottom: "60px;" }}>
+        <div style={{ paddingBottom: "60px;" }}>
           <div className="row">
-            <div className="col-lg-12">
-              <h1 className="mt-5  text-center">Codux</h1>
-              <p className="lead  text-center">Check your coding profile at <img
+            <div className="col-lg-12 text-center">
+              <h1 className="mt-5">Codux</h1>
+              <p className="lead"><strong>Check your coding profile at</strong> <img
                 src="https://sta.codeforces.com/s/70808/images/codeforces-logo-with-telegram.png" alt="Codeforces"
                 style={{ width: "15%", height: "15%" }}></img>
               </p>
@@ -56,11 +57,15 @@ function App() {
             </div>
           </div>
         </div>
-
+        <div class="container">
+  <input type="text" placeholder="Search..."/>
+  <div class="search"></div>
+  <br/>
+                   
+  </div>
 
       </HashRouter>
     </Provider>
   );
 }
-
 export default App;

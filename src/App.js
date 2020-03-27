@@ -43,9 +43,9 @@ function App() {
         </div>
         <div className="container" style={{ paddingBottom: "60px;" }}>
           <div className="row">
-            <div className="col-lg-12 text-center">
-              <h1 className="mt-5">Codux</h1>
-              <p className="lead">Check your coding profile at <img
+            <div className="col-lg-12">
+              <h1 className="mt-5  text-center">Codux</h1>
+              <p className="lead  text-center">Check your coding profile at <img
                 src="https://sta.codeforces.com/s/70808/images/codeforces-logo-with-telegram.png" alt="Codeforces"
                 style={{ width: "15%", height: "15%" }}></img>
               </p>

@@ -56,22 +56,24 @@ export default class PieChart extends Component {
 
 		var data2 = [];
 		var labels = [];
-		console.log(this.props.tags);
-		this.props.tags.map((tag, index) => {
+		//console.log(this.props.tags);
+		/*this.props.tags.map((tag, index) => {
 			data2.push(this.props.data[tag].length)
 			labels.push(tag);
 			return 0;
-		})
+		})*/
+		//labels = this.props.tags;
+		data2 = this.props.data;
 		while (coloR.length < labels.length) {
 			let col = dynamicColors();
-			console.log(col);
+			//console.log(col);
 			while (coloR.indexOf(col) !== -1)
 				col = dynamicColors();
 			coloR.push(col);
 		}
 
-		for (let i = 0; i < labels.length; i++) {
-			labels[i] = labels[i] + " : " + data2[i];
+		for (let i = 0; i < this.props.tags.length; i++) {
+			labels.push(this.props.tags[i] + " : " + data2[i]);
 		}
 		let data = {
 			labels: labels,

@@ -77,6 +77,7 @@ export const fetchUSubmissions = string => dispatch => {
       let byverdicts = groupBy(submissionData.result, "verdict");
       let verdicts = Object.keys(groupBy(submissionData.result, "verdict"));
 
+
       dispatch({
         type: FETCH_USUBMISSIONS,
         payload: submissionData,

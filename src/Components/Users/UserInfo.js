@@ -23,7 +23,7 @@ export class UserInfo extends Component {
 
     render() {
         return (
-            
+
             <React.Fragment>
 
                 <nav className="navbar navbar-expand-sm bg-light navbar-light justify-content-center nav-tabs">
@@ -42,19 +42,19 @@ export class UserInfo extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div class="jumbotron" style={{padding: "3rem" }}>
-                <strong>{this.props.name} </strong>	<br /><br/>
+                <div class="jumbotron text-center" style={{ padding: "3rem" }}>
+                    <strong>{this.props.name} </strong>	<br /><br />
                     {this.props.userexists &&
                         <div class="ip">
-                            <img src={this.props.info.titlePhoto} class="img-thumbnail " alt="Title" height="100" width="100"></img><br /><br/>
- 		    <ul class="list-group">
-            <li class="list-group-item"><strong>Rank</strong> : {this.props.info.rank}</li>
-			<li class="list-group-item"><strong>Organisation:</strong>{this.props.info.organisation}</li>
-			<li class="list-group-item"><strong>Contributions:</strong>{this.props.info.contribution}</li>
-			<li class="list-group-item"><strong>Rating:</strong> {this.props.info.rating}</li>
-			<li class="list-group-item"><strong>Maxrank:</strong> {this.props.info.maxRank}</li>
-			<li class="list-group-item"><strong>MaxRating:</strong> {this.props.info.maxRating}</li>
-                            <br />
+                            <img src={this.props.info.titlePhoto} class="img-thumbnail " alt="Title" height="100" width="100"></img><br /><br />
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Rank</strong> : {this.props.info.rank}</li>
+                                <li class="list-group-item"><strong>Organisation:</strong>{this.props.info.organisation}</li>
+                                <li class="list-group-item"><strong>Contributions:</strong>{this.props.info.contribution}</li>
+                                <li class="list-group-item"><strong>Rating:</strong> {this.props.info.rating}</li>
+                                <li class="list-group-item"><strong>Maxrank:</strong> {this.props.info.maxRank}</li>
+                                <li class="list-group-item"><strong>MaxRating:</strong> {this.props.info.maxRating}</li>
+                                <br />
                             </ul>
                         </div>
                     }

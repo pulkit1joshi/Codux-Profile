@@ -58,10 +58,10 @@ export default class HBar extends Component {
         };
 
 
-        console.log(this.props.tags);
+        //console.log(this.props.tags);
         var data2 = [];
         var labels = [];
-        console.log(this.props.tags);
+        //console.log(this.props.tags);
         this.props.tags.map((tag, index) => {
             data2.push(this.props.data[tag].length)
             labels.push(tag);
@@ -69,7 +69,7 @@ export default class HBar extends Component {
         })
         while (coloR.length < labels.length) {
             let col = dynamicColors();
-            console.log(col);
+            //console.log(col);
             while (coloR.indexOf(col) !== -1)
                 col = dynamicColors();
             coloR.push(col);
@@ -90,7 +90,7 @@ export default class HBar extends Component {
         return data;
     }
     render() {
-        console.log("Height is:" + this.state.height);
+        //console.log("Height is:" + this.state.height);
         return (
             <div>
                 <HorizontalBar data={this.getdata}

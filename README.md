@@ -6,7 +6,7 @@ from codeforces only.
 
 ## Current Features
 ### User Features
-* Basic User Information
+* Basic User Informationgi
 * Rating History 
 * Contests History
 * Submissions
@@ -22,9 +22,13 @@ from codeforces only.
 * Types tab
 * Format tab
 
+## Upcoming / Todo
+
 - [x] Set up single page react application.
 - [x] Set up API endpoints for User features.
 - [x] Use react-router router
 - [x] Use redux to store states at application level.
 - [x] Set up API endpoints for Contest features.
-- [x] 
+- [ ] Design UI/UX of website
+- [ ] Add New Feature (3rd)
+- [ ] Make native app

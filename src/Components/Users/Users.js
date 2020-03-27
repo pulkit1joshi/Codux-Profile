@@ -17,17 +17,19 @@ class Users extends Component {
       <React.Fragment>
         <HashRouter>
           <div>
-          <div className="row">
-            <div className="col-sm-1"></div>
-            <div className="col-sm-10">
-              <Switch> 
-              <Route path='/user/' exact component={Form}></Route>   
-              <Route path='/user/:username/info' exact component={UserInfo}></Route>
-              <Route path='/user/:username/ratinghistory' exact component={RatingHistory}></Route>
-              <Route path='/user/:username/submissions' exact component={UserSubmissions}></Route>
-              </Switch>
+            <div className="row">
+              <div className="col-sm-1"></div>
+              <div className="col-sm-10">
+                <Switch>
+                  <Route path='/user/' exact component={Form}></Route>
+                  <Route path='/user/:username/info' exact component={UserInfo}></Route>
+                  <Route path='/user/:username/ratinghistory' exact component={RatingHistory}></Route>
+                  <Route path='/user/:username/submissions' exact component={UserSubmissions}></Route>
+                </Switch>
+              </div>
+
             </div>
-          </div>
+
           </div>
         </HashRouter>
       </React.Fragment>

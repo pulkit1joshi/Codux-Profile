@@ -16,6 +16,10 @@ const initialState = {
     registrationTimeSeconds: '',
     maxRank: ''
   },
+  tags: [],
+  verdicts: [],
+  problemsbytags: [],
+  byverdict: [],
   ratinghist: [],
   usersubmissions: [
     {
@@ -62,7 +66,6 @@ export default function (state = initialState, action) {
     default:
       return state;
     case FETCH_USER:
-      console.log(action.payload);
       if (action.payload.result) {
         return {
           ...state,
@@ -81,7 +84,6 @@ export default function (state = initialState, action) {
       }
     case FETCH_RATINGHIST:
       {
-        console.log(action.payload.result);
         return {
           ...state,
           ratinghist: action.payload.result,
@@ -91,10 +93,14 @@ export default function (state = initialState, action) {
     case FETCH_USUBMISSIONS:
       {
         console.log("Submissions");
-        console.log(action.payload.result);
+        console.log(action.verdict);
         return {
           ...state,
           usersubmissions: action.payload.result,
+          problemsbytags: action.problemsbytags,
+          tags: action.tags,
+          verdicts: action.verdicts,
+          byverdict: action.byverdict,
           name: action.name
         };
       }

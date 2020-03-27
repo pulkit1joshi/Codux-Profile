@@ -1,12 +1,33 @@
 import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Main from './Components/Main';
 
 import store from './store'
 import { HashRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+
+import { usePromiseTracker } from "react-promise-tracker";
+import Loader from 'react-loader-spinner';
+
+const LoadingIndicator = props => {
+  const { promiseInProgress } = usePromiseTracker();
+  return (
+    promiseInProgress &&
+    <div
+      style={{
+        width: "100%",
+        height: "100",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
+      <Loader type="Oval" color="#808080" height="50" width="50" />
+    </div>
+  );
+}
 
 
 function App() {
@@ -41,6 +62,7 @@ function App() {
 
           </nav>
         </div>
+
         <div className="container" style={{ paddingBottom: "60px;" }}>
           <div className="row">
             <div className="col-lg-12">
@@ -49,8 +71,11 @@ function App() {
                 src="https://sta.codeforces.com/s/70808/images/codeforces-logo-with-telegram.png" alt="Codeforces"
                 style={{ width: "15%", height: "15%" }}></img>
               </p>
+
               <div className="App">
+                <LoadingIndicator />
                 <hr />
+
                 <Main />
               </div>
             </div>

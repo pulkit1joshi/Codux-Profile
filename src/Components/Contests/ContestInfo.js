@@ -24,7 +24,8 @@ export class ContestInfo extends Component {
         return (
             <React.Fragment>
                 <HashRouter>
-                    <nav className="navbar navbar-expand-sm bg-light navbar-light justify-content-center nav-tabs">
+                    <nav className="navbar navbar-expand
+                     bg-light navbar-light justify-content-center nav-tabs">
                         <ul className="navbar-nav ">
                             <li className="nav-item">
                                 <Link to={`/contests/`} className="nav-link"> {"<"} </Link>

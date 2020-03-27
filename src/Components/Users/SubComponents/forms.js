@@ -23,9 +23,12 @@ class Form extends Component {
                 <div className="col-sm-8">
                 <form>
                 
-			    <input type="text" name="name" className="form-control form-control "  id="ip1" value={this.state.name} placeholder="Your Handle Here" onChange={this.onChange} /><br /><br/>
+			    <input type="text" name="name" className="form-control form-control "aria-describedby="basic-addon1"  id="ip1" value={this.state.name} placeholder="@ Your Handle Here" onChange={this.onChange} />
+            
+                <br/>
                     <Link to={`/user/${this.state.name}/info`}><button type="submit"  className="btn btn-dark">Get Data</button></Link>
                     <br />
+                    
                    
                 </form>
                 </div>

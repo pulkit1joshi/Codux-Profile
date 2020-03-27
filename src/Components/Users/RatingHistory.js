@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { fetchRatingHist } from '../../actions/userActions'
 import PropTypes from 'prop-types'
 import Nav from './SubComponents/nav'
-
 //import Calendar from 'react-github-contribution-calendar';
-
 import Graph from '../SubComponents/Graph.js'
 
 
@@ -41,7 +39,6 @@ export class RatingHistory extends Component {
             <React.Fragment>
 
                 <Nav name={this.props.name} />
-
 
                 <div style={{ paddingTop: "2rem", paddingBottom: "3rem" }}>
                     <div class="card" >

@@ -42,11 +42,6 @@ export class UserSubmissions extends Component {
                 <div className="card" style={{ marginTop: "2rem" }}>
                     <div class="card-header bg-info text-white">
                         Topics analysis
-<<<<<<< HEAD
-                    </div>
-                    <div class="card-body">
-                        <HBar tags={this.props.tags} data={this.props.problems} />
-=======
                     </div>
                     <div class="card-body">
                         <HBar tags={this.props.tags} data={this.props.problems} />
@@ -62,7 +57,6 @@ export class UserSubmissions extends Component {
                     <div class="card-body">
 
                         <PieChart tags={this.props.verdicts} data={this.props.verdictcount} color={color} />
->>>>>>> c194cfd272384e4271e4d6abb87ebf9d32f1cb2b
                     </div>
                 </div>
 
@@ -71,24 +65,6 @@ export class UserSubmissions extends Component {
 
                 <div className="card" style={{ marginTop: "2rem" }}>
                     <div class="card-header bg-info text-white">
-<<<<<<< HEAD
-                        Verdict Analysis
-                    </div>
-                    <div class="card-body">
-
-                        <PieChart tags={this.props.verdicts} data={this.props.verdictcount} color={color} />
-                    </div>
-                </div>
-
-                <List heading="Problems Summary" data={this.props.problemsinfo} />
-
-                <div className="card" style={{ marginTop: "2rem" }}>
-                    <div class="card-header bg-info text-white">
-                        AC analysis
-                    </div>
-                    <div class="card-body">
-                        <Bar tags={this.props.qbyindexlist} data={this.props.qbyindex} />
-=======
                         AC analysis
                     </div>
                     <div class="card-body">
@@ -104,7 +80,6 @@ export class UserSubmissions extends Component {
                     <div class="card-body">
                         <PieChart tags={this.props.languages} data={this.props.langdata} color={color} />
 
->>>>>>> c194cfd272384e4271e4d6abb87ebf9d32f1cb2b
                     </div>
                 </div>
 

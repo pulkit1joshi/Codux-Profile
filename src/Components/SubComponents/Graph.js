@@ -10,6 +10,20 @@ const options = {
 			}
 		}
 	},
+	scales: {
+		yAxes: [{
+			scaleLabel: {
+				display: true,
+				labelString: 'Ratings'
+			}
+		}],
+		xAxes: [{
+			scaleLabel: {
+				display: true,
+				labelString: 'Contest Number'
+			}
+		}],
+	},
 	plugins: {
 		datalabels: {
 			display: false,

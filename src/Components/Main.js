@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { HashRouter, Route } from 'react-router-dom'
 import { Switch } from "react-router-dom";
 import Users from './Users/Users'
-
 import ContestInfo from './Contests/ContestInfo'
 //import { Link } from 'react-router-dom'
 
@@ -104,7 +103,7 @@ class Main extends Component {
               <div className="col-sm-10">
                 <Switch>
                   <Route path='/contests/' component={ContestInfo}></Route>
-                  <Route path='/' component={Users}></Route>
+                  <Route path='/' exact component={Users}></Route>
                 </Switch>
               </div>
             </div>

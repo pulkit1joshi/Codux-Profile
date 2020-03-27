@@ -32,8 +32,8 @@ export class UserSubmissions extends Component {
             "#f1c20f",
             "#f1c42f",
             "#34499a",
-            "#3498ad",
-            "#95b2a6",
+            "#3498a",
+            "#95a5a6",
         ]
         return (
             <React.Fragment>
@@ -60,6 +60,15 @@ export class UserSubmissions extends Component {
                     </div>
                 </div>
 
+                <div className="card" style={{ marginTop: "2rem" }}>
+                    <div class="card-header bg-info text-white">
+                        Languages Analysis
+                    </div>
+                    <div class="card-body">
+                        <PieChart tags={this.props.languages} data={this.props.langdata} color={color} />
+
+                    </div>
+                </div>
 
                 <List heading="Problems Summary" data={this.props.problemsinfo} />
 
@@ -69,17 +78,6 @@ export class UserSubmissions extends Component {
                     </div>
                     <div class="card-body">
                         <Bar tags={this.props.qbyindexlist} data={this.props.qbyindex} />
-                    </div>
-                </div>
-
-
-                <div className="card" style={{ marginTop: "2rem" }}>
-                    <div class="card-header bg-info text-white">
-                        Languages Analysis
-                    </div>
-                    <div class="card-body">
-                        <PieChart tags={this.props.languages} data={this.props.langdata} color={color} />
-
                     </div>
                 </div>
 

@@ -12,13 +12,13 @@ export default class Nav extends Component {
                             <Link to={`/`} className="nav-link"> {"<"} </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/user/${this.props.name}/info`} className="nav-link" > Basic </Link>
+                            <Link to={`/${this.props.name}/info`} className="nav-link" > Basic </Link>
                         </li>
                         <li className="nav-item" onClick={this.clicked}>
-                            <Link to={`/user/${this.props.name}/ratinghistory`} className="nav-link" > Rating History </Link>
+                            <Link to={`/${this.props.name}/ratinghistory`} className="nav-link" > Rating History </Link>
                         </li>
                         <li className="nav-item" onClick={this.clicked}>
-                            <Link to={`/user/${this.props.name}/submissions`} className="nav-link"> Submissions </Link>
+                            <Link to={`/${this.props.name}/submissions`} className="nav-link"> Submissions </Link>
                         </li>
                     </ul>
                 </nav>

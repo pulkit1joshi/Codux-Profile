@@ -24,7 +24,7 @@ class Form extends Component {
                     <form>
 
                         <input type="text" name="name" className="form-control form-control " id="ip1" value={this.state.name} placeholder="Your Handle Here" onChange={this.onChange} /><br /><br />
-                        <Link to={`/${this.state.name}/info`}><button type="submit" className="btn btn-dark">Get Data</button></Link>
+                        <Link to={`/${this.state.name}/info`}><button type="submit" className="btn btn-dark">Search</button></Link>
                         <br />
 
                     </form>

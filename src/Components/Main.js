@@ -103,7 +103,7 @@ class Main extends Component {
               <div className="col-sm-10">
                 <Switch>
                   <Route path='/contests/' component={ContestInfo}></Route>
-                  <Route path='/' exact component={Users}></Route>
+                  <Route path='/' component={Users}></Route>
                 </Switch>
               </div>
             </div>

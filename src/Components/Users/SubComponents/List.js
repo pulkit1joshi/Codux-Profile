@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class List extends Component {
     render() {
         return (
-            <div style={{ paddingTop: "3rem" }}>
+            <div style={{ paddingTop: "1rem" }}>
                 <div class="card" >
                     <div class="card-header bg-info text-white">
                         {this.props.heading}

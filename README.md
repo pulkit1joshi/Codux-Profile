@@ -31,4 +31,4 @@ from codeforces only.
 - [x] Set up API endpoints for Contest features.
 - [x] Design UI/UX of website
 - [ ] Add New Feature (3rd)
-- [ ] Make native app
+- [x] Make native app : Beta version released. Check : https://github.com/pulkit1joshi/CoduxApp
